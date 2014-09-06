@@ -30,11 +30,18 @@ d3.json("/home/list", function(error, data) {
   var g = svg.selectAll(".arc")
       .data(pie(data))
     .enter().append("g")
-      .attr("class", "arc");
+    .attr("class", "arc")
+      .on("click", function(d) {
+        console.log(d.data.category, d.data.amount);
+        // d3.select(this).remove();
+        location.href = "/home/list/" + d.data.category;
+      });
 
   g.append("path")
       .attr("d", arc)
       .style("fill", function(d) { return color(d.data.category); });
+      //.on("mouseover", function(d) { d3.select(this).style("fill", color(d.data.category)); })
+      //.on("mouseout", function(d, i) { d3.select(this).style("fill", color(d.data.category)); });
 
   g.append("text")
       .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })

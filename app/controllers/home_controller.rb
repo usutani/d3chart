@@ -16,19 +16,19 @@ class HomeController < ApplicationController
       },
       {
         'category' => 'B',
-        'amount' => '40'
+        'amount' => '35'
       },
       {
         'category' => 'C',
-        'amount' => '15'
+        'amount' => '60'
       },
       {
         'category' => 'D',
-        'amount' => '10'
+        'amount' => '30'
       },
       {
         'category' => 'E',
-        'amount' => '7'
+        'amount' => '10'
       }
     ]
     render json: data
