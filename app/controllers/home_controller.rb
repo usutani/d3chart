@@ -2,6 +2,12 @@ class HomeController < ApplicationController
   def index
   end
 
+  def bar
+  end
+
+  def pie
+  end
+
   def list
     data = [
       {
